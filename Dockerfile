@@ -12,6 +12,12 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 RUN dpkg -i google-chrome-stable_current_amd64.deb; exit 0
 RUN apt-get install -fyq
 RUN dpkg -i google-chrome-stable_current_amd64.deb
-RUN pip3 install selenium
+
+COPY requirements.txt /tmp/
+RUN pip3 install -r requirements.txt
 
 WORKDIR /
+
+RUN mkdir /opt/redashbot-python
+
+WORKDIR /opt/redashbot-python
