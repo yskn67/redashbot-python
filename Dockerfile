@@ -16,8 +16,9 @@ RUN dpkg -i google-chrome-stable_current_amd64.deb
 COPY requirements.txt /tmp/
 RUN pip3 install -r requirements.txt
 
-WORKDIR /
-
-RUN mkdir /opt/redashbot-python
+WORKDIR /opt
+RUN git clone https://github.com/yskn67/redashbot-python
 
 WORKDIR /opt/redashbot-python
+ENTRYPOINT ["python3"]
+CMD ["-m", "redashbot.app"]
