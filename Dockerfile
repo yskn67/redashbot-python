@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER yskn67
 
 WORKDIR /tmp/
-RUN apt-get update -y && apt-get install -yq wget unzip build-essential gcc zlib1g-dev python3 python3-dev python3-pip
+RUN apt-get update -y && apt-get install -yq wget unzip build-essential gcc zlib1g-dev python3 python3-dev python3-pip git
 RUN wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
 RUN unzip chromedriver_linux64.zip
 RUN mv chromedriver /usr/local/bin/
