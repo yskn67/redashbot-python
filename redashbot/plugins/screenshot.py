@@ -23,7 +23,9 @@ def screenshot(msg, query_id, visual_id):
 
     options = Options()
     options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
     options.add_argument('--disable-gpu')
+    options.add_argument('--window-size=720,360')
     driver = webdriver.Chrome(chrome_options=options)
     driver.set_window_size(720, 360)
     driver.get(embed_url)
