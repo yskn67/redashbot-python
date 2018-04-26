@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from slackbot.bot import respond_to
 
 
-@respond_to('^\s*{}/queries/(\d+)#(\d+)\s*$'.format(os.environ['REDASH_HOST']))
+@respond_to('^\s*<{}/queries/(\d+)#(\d+)>\s*$'.format(os.environ['REDASH_HOST']))
 def screenshot(msg, query_id, visual_id):
     query_url = '{}/queries/{}#{}'.format(
         os.environ['REDASH_HOST'],
