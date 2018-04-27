@@ -21,4 +21,4 @@ RUN git clone https://github.com/yskn67/redashbot-python
 
 WORKDIR /opt/redashbot-python
 ENTRYPOINT ["python3"]
-CMD ["-m", "redashbot.app"]
+CMD ["redashbot/app.py"]
