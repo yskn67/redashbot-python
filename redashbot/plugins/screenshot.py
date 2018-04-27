@@ -21,6 +21,7 @@ def screenshot(msg, query_id, visual_id):
         visual_id,
         os.environ['REDASH_API_KEY'])
     df, fname = tempfile.mkstemp(suffix='.png', dir='/tmp')
+    msg.send('Taking screenshot of <{}>'.format(query_url))
 
     options = Options()
     options.add_argument('--headless')
