@@ -20,7 +20,9 @@ def screenshot(msg, query_id, visual_id):
         query_id,
         visual_id,
         os.environ['REDASH_API_KEY'])
+    upload_fname = 'query-{}-visualization-{}'.format(query_id, visual_id)
     df, fname = tempfile.mkstemp(suffix='.png', dir='/tmp')
+    msg.send('Taking screenshot of <{}>'.format(query_url))
 
     options = Options()
     options.add_argument('--headless')
@@ -33,5 +35,5 @@ def screenshot(msg, query_id, visual_id):
     driver.save_screenshot(fname)
     driver.quit()
 
-    msg.channel.upload_file(query_url, fname)
+    msg.channel.upload_file(upload_fname, fname)
     os.remove(fname)
