@@ -29,7 +29,7 @@ def screenshot(msg, query_id, visual_id):
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(chrome_options=options)
-    driver.set_window_size(960, 600)
+    driver.set_window_size(960, 530)
     driver.get(embed_url)
     sleep(1)
     driver.save_screenshot(fname)
